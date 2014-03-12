@@ -1,0 +1,308 @@
+Call:
+rpart(formula = Survived ~ ., data = train, cp = -1, maxdepth = 6)
+  n= 891 
+
+            CP nsplit rel error    xerror       xstd
+1  0.461988304      0 1.0000000 1.0000000 0.04244576
+2  0.052631579      1 0.5380117 0.5584795 0.03581795
+3  0.013645224      3 0.4327485 0.4649123 0.03341867
+4  0.006822612      6 0.3918129 0.4795322 0.03382394
+5  0.004385965     11 0.3567251 0.4853801 0.03398272
+6  0.000000000     13 0.3479532 0.5058480 0.03452394
+7 -1.000000000     31 0.3479532 0.5058480 0.03452394
+
+Variable importance
+categolizedName             Sex            Fare    Cabin_factor          Pclass           SibSp           Parch     PassengerId 
+             25              20              13              12               8               8               8               2 
+            Age        Embarked 
+              2               2 
+
+Node number 1: 891 observations,    complexity param=0.4619883
+  predicted class=0  expected loss=0.3838384  P(node) =1
+    class counts:   549   342
+   probabilities: 0.616 0.384 
+  left son=2 (533 obs) right son=3 (358 obs)
+  Primary splits:
+      categolizedName splits as  -RLL-RRRRRRLRRLR-, improve=135.79700, (0 missing)
+      Sex             splits as  RL, improve=124.42630, (0 missing)
+      Cabin_factor    splits as  RRRRRRRLRRL, improve= 45.84606, (0 missing)
+      Pclass          splits as  RRL, improve= 43.78183, (0 missing)
+      Fare            < 10.48125 to the left,  improve= 37.94194, (0 missing)
+  Surrogate splits:
+      Sex          splits as  RL,           agree=0.948, adj=0.872, (0 split)
+      Parch        < 0.5      to the left,  agree=0.716, adj=0.293, (0 split)
+      SibSp        splits as  LRLRRRR,      agree=0.673, adj=0.187, (0 split)
+      Fare         < 15.1729  to the left,  agree=0.652, adj=0.134, (0 split)
+      Cabin_factor splits as  LRLRLRRLLLL,  agree=0.620, adj=0.053, (0 split)
+
+Node number 2: 533 observations,    complexity param=0.006822612
+  predicted class=0  expected loss=0.1575985  P(node) =0.5982043
+    class counts:   449    84
+   probabilities: 0.842 0.158 
+  left son=4 (442 obs) right son=5 (91 obs)
+  Primary splits:
+      Cabin_factor splits as  RRRRRL-LLLL,  improve=12.432310, (0 missing)
+      Pclass       splits as  RLL,          improve=10.612700, (0 missing)
+      Fare         < 26.26875 to the left,  improve=10.439020, (0 missing)
+      Age          < 24.75    to the left,  improve= 1.936298, (120 missing)
+      Embarked     splits as  -RLL,         improve= 1.799857, (0 missing)
+  Surrogate splits:
+      Pclass splits as  RLL,          agree=0.944, adj=0.670, (0 split)
+      Fare   < 28.2     to the left,  agree=0.886, adj=0.330, (0 split)
+      Sex    splits as  RL,           agree=0.831, adj=0.011, (0 split)
+      SibSp  splits as  LLLRLLL,      agree=0.831, adj=0.011, (0 split)
+
+Node number 3: 358 observations,    complexity param=0.05263158
+  predicted class=1  expected loss=0.2793296  P(node) =0.4017957
+    class counts:   100   258
+   probabilities: 0.279 0.721 
+  left son=6 (169 obs) right son=7 (189 obs)
+  Primary splits:
+      Cabin_factor splits as  RRRRRRL-RRL,  improve=39.154150, (0 missing)
+      Pclass       splits as  RRL,          improve=37.539800, (0 missing)
+      SibSp        splits as  RRRLLLL,      improve=25.637490, (0 missing)
+      Fare         < 48.2     to the left,  improve=11.839430, (0 missing)
+      Embarked     splits as  RRLL,         improve= 6.116934, (0 missing)
+  Surrogate splits:
+      Pclass          splits as  RRL, agree=0.992, adj=0.982, (0 split)
+      Fare            < 25.69795 to the left,  agree=0.763, adj=0.497, (0 split)
+      Embarked        splits as  RRLR, agree=0.623, adj=0.201, (0 split)
+      categolizedName splits as  -R---RRLLRR-RR-R-, agree=0.623, adj=0.201, (0 split)
+      SibSp           splits as  RRRLLLL, agree=0.620, adj=0.195, (0 split)
+
+Node number 4: 442 observations,    complexity param=0.004385965
+  predicted class=0  expected loss=0.1085973  P(node) =0.4960718
+    class counts:   394    48
+   probabilities: 0.891 0.109 
+  left son=8 (422 obs) right son=9 (20 obs)
+  Primary splits:
+      Fare         < 54.2479  to the left,  improve=1.5348500, (0 missing)
+      Cabin_factor splits as  -----L-LRLL,  improve=0.8246606, (0 missing)
+      Pclass       splits as  RLL,          improve=0.7425321, (0 missing)
+      PassengerId  < 674.5    to the right, improve=0.6146432, (0 missing)
+      Parch        < 0.5      to the right, improve=0.4868403, (0 missing)
+  Surrogate splits:
+      SibSp splits as  LLL-LLR, agree=0.962, adj=0.15, (0 split)
+
+Node number 5: 91 observations,    complexity param=0.006822612
+  predicted class=0  expected loss=0.3956044  P(node) =0.1021324
+    class counts:    55    36
+   probabilities: 0.604 0.396 
+  left son=10 (36 obs) right son=11 (55 obs)
+  Primary splits:
+      Age          < 43       to the right, improve=3.6571430, (11 missing)
+      PassengerId  < 548      to the left,  improve=3.0477970, (0 missing)
+      Cabin_factor splits as  LLLRR------,  improve=1.8162720, (0 missing)
+      Fare         < 31.6604  to the right, improve=1.1831500, (0 missing)
+      Embarked     splits as  -RLL,         improve=0.4520026, (0 missing)
+  Surrogate splits:
+      PassengerId  < 97.5     to the left,  agree=0.588, adj=0.057, (11 split)
+      Cabin_factor splits as  RRRRL------,  agree=0.588, adj=0.057, (0 split)
+      Sex          splits as  LR,           agree=0.575, adj=0.029, (0 split)
+      SibSp        splits as  RRLR---,      agree=0.575, adj=0.029, (0 split)
+      Embarked     splits as  -RLR,         agree=0.575, adj=0.029, (0 split)
+
+Node number 6: 169 observations,    complexity param=0.05263158
+  predicted class=0  expected loss=0.4733728  P(node) =0.1896745
+    class counts:    89    80
+   probabilities: 0.527 0.473 
+  left son=12 (44 obs) right son=13 (125 obs)
+  Primary splits:
+      Fare     < 23.35    to the right, improve=17.403630, (0 missing)
+      SibSp    splits as  RRRLLLL,      improve=12.006390, (0 missing)
+      Embarked splits as  -RRL,         improve= 7.505638, (0 missing)
+      Parch    < 0.5      to the right, improve= 5.013787, (0 missing)
+      Age      < 38.5     to the right, improve= 3.295123, (45 missing)
+  Surrogate splits:
+      SibSp           splits as  RRRLLLL, agree=0.893, adj=0.591, (0 split)
+      Parch           < 1.5      to the right, agree=0.840, adj=0.386, (0 split)
+      Sex             splits as  RL, agree=0.781, adj=0.159, (0 split)
+      categolizedName splits as  -------LR---R----, agree=0.781, adj=0.159, (0 split)
+      PassengerId     < 884.5    to the right, agree=0.751, adj=0.045, (0 split)
+
+Node number 7: 189 observations,    complexity param=0
+  predicted class=1  expected loss=0.05820106  P(node) =0.2121212
+    class counts:    11   178
+   probabilities: 0.058 0.942 
+
+Node number 8: 422 observations,    complexity param=0
+  predicted class=0  expected loss=0.09952607  P(node) =0.4736251
+    class counts:   380    42
+   probabilities: 0.900 0.100 
+
+Node number 9: 20 observations,    complexity param=0.004385965
+  predicted class=0  expected loss=0.3  P(node) =0.02244669
+    class counts:    14     6
+   probabilities: 0.700 0.300 
+  left son=18 (13 obs) right son=19 (7 obs)
+  Primary splits:
+      Fare         < 58.9375  to the right, improve=3.6967030, (0 missing)
+      PassengerId  < 448      to the left,  improve=1.6000000, (0 missing)
+      Pclass       splits as  LLR,          improve=1.6000000, (0 missing)
+      Cabin_factor splits as  --------LLR,  improve=1.6000000, (0 missing)
+      SibSp        splits as  RLL---L,      improve=0.8166667, (0 missing)
+  Surrogate splits:
+      Pclass       splits as  LLR,          agree=0.85, adj=0.571, (0 split)
+      Cabin_factor splits as  --------LLR,  agree=0.85, adj=0.571, (0 split)
+      PassengerId  < 679.5    to the left,  agree=0.75, adj=0.286, (0 split)
+      SibSp        splits as  RLL---L,      agree=0.75, adj=0.286, (0 split)
+
+Node number 10: 36 observations,    complexity param=0
+  predicted class=0  expected loss=0.25  P(node) =0.04040404
+    class counts:    27     9
+   probabilities: 0.750 0.250 
+
+Node number 11: 55 observations,    complexity param=0.006822612
+  predicted class=0  expected loss=0.4909091  P(node) =0.0617284
+    class counts:    28    27
+   probabilities: 0.509 0.491 
+  left son=22 (48 obs) right son=23 (7 obs)
+  Primary splits:
+      Cabin_factor splits as  LLLLR------,  improve=4.1575760, (0 missing)
+      Age          < 24.5     to the left,  improve=1.5621620, (10 missing)
+      PassengerId  < 741.5    to the right, improve=1.5537110, (0 missing)
+      Fare         < 26.14375 to the left,  improve=1.0866540, (0 missing)
+      Embarked     splits as  -R-L,         improve=0.4499734, (0 missing)
+  Surrogate splits:
+      Pclass splits as  LLR, agree=0.891, adj=0.143, (0 split)
+
+Node number 12: 44 observations,    complexity param=0
+  predicted class=0  expected loss=0.09090909  P(node) =0.04938272
+    class counts:    40     4
+   probabilities: 0.909 0.091 
+
+Node number 13: 125 observations,    complexity param=0.01364522
+  predicted class=1  expected loss=0.392  P(node) =0.1402918
+    class counts:    49    76
+   probabilities: 0.392 0.608 
+  left son=26 (92 obs) right son=27 (33 obs)
+  Primary splits:
+      Age             < 16.5     to the right, improve=4.073155, (35 missing)
+      Embarked        splits as  -RRL, improve=2.595868, (0 missing)
+      Sex             splits as  LR, improve=1.853565, (0 missing)
+      categolizedName splits as  -------RL---L----, improve=1.853565, (0 missing)
+      Fare            < 7.8875   to the right, improve=1.429095, (0 missing)
+  Surrogate splits:
+      Sex             splits as  LR, agree=0.744, adj=0.258, (35 split)
+      Embarked        splits as  -RLL, agree=0.744, adj=0.258, (0 split)
+      categolizedName splits as  -------RL---L----, agree=0.744, adj=0.258, (0 split)
+      Parch           < 0.5      to the left,  agree=0.711, adj=0.161, (0 split)
+      SibSp           splits as  LLRRL--, agree=0.700, adj=0.129, (0 split)
+
+Node number 18: 13 observations
+  predicted class=0  expected loss=0.07692308  P(node) =0.01459035
+    class counts:    12     1
+   probabilities: 0.923 0.077 
+
+Node number 19: 7 observations
+  predicted class=1  expected loss=0.2857143  P(node) =0.007856341
+    class counts:     2     5
+   probabilities: 0.286 0.714 
+
+Node number 22: 48 observations,    complexity param=0.006822612
+  predicted class=0  expected loss=0.4166667  P(node) =0.05387205
+    class counts:    28    20
+   probabilities: 0.583 0.417 
+  left son=44 (26 obs) right son=45 (22 obs)
+  Primary splits:
+      Cabin_factor splits as  LRLR-------,  improve=1.3473190, (0 missing)
+      Fare         < 26.275   to the left,  improve=1.2288040, (0 missing)
+      Embarked     splits as  -R-L,         improve=1.1111110, (0 missing)
+      PassengerId  < 741.5    to the right, improve=0.8376068, (0 missing)
+      Age          < 24.5     to the left,  improve=0.7894737, (10 missing)
+  Surrogate splits:
+      PassengerId < 603      to the left,  agree=0.667, adj=0.273, (0 split)
+      Fare        < 19.5     to the right, agree=0.625, adj=0.182, (0 split)
+      Pclass      splits as  LR-,          agree=0.583, adj=0.091, (0 split)
+      SibSp       splits as  LR-L---,      agree=0.583, adj=0.091, (0 split)
+      Parch       < 0.5      to the left,  agree=0.562, adj=0.045, (0 split)
+
+Node number 23: 7 observations
+  predicted class=1  expected loss=0  P(node) =0.007856341
+    class counts:     0     7
+   probabilities: 0.000 1.000 
+
+Node number 26: 92 observations,    complexity param=0.01364522
+  predicted class=1  expected loss=0.4565217  P(node) =0.1032548
+    class counts:    42    50
+   probabilities: 0.457 0.543 
+  left son=52 (55 obs) right son=53 (37 obs)
+  Primary splits:
+      Fare        < 7.8875   to the right, improve=3.138169, (0 missing)
+      PassengerId < 396      to the right, improve=2.913712, (0 missing)
+      Embarked    splits as  -LRL,         improve=2.348602, (0 missing)
+      Age         < 36.5     to the right, improve=1.573850, (33 missing)
+      SibSp       splits as  RLLRR--,      improve=0.735159, (0 missing)
+  Surrogate splits:
+      Embarked        splits as  -LRL, agree=0.772, adj=0.432, (0 split)
+      categolizedName splits as  --------R---L----, agree=0.707, adj=0.270, (0 split)
+      SibSp           splits as  RLLLL--, agree=0.674, adj=0.189, (0 split)
+
+Node number 27: 33 observations,    complexity param=0
+  predicted class=1  expected loss=0.2121212  P(node) =0.03703704
+    class counts:     7    26
+   probabilities: 0.212 0.788 
+
+Node number 44: 26 observations,    complexity param=0
+  predicted class=0  expected loss=0.3076923  P(node) =0.0291807
+    class counts:    18     8
+   probabilities: 0.692 0.308 
+
+Node number 45: 22 observations,    complexity param=0.006822612
+  predicted class=1  expected loss=0.4545455  P(node) =0.02469136
+    class counts:    10    12
+   probabilities: 0.455 0.545 
+  left son=90 (7 obs) right son=91 (15 obs)
+  Primary splits:
+      Fare        < 30.25    to the left,  improve=1.3852810, (0 missing)
+      Age         < 33.5     to the left,  improve=1.0666670, (2 missing)
+      PassengerId < 342      to the left,  improve=0.7305195, (0 missing)
+      SibSp       splits as  LR-----,      improve=0.5852814, (0 missing)
+      Embarked    splits as  -R-L,         improve=0.4475524, (0 missing)
+  Surrogate splits:
+      PassengerId < 739.5    to the right, agree=0.818, adj=0.429, (0 split)
+      Pclass      splits as  RL-,          agree=0.773, adj=0.286, (0 split)
+
+Node number 52: 55 observations,    complexity param=0.01364522
+  predicted class=0  expected loss=0.4363636  P(node) =0.0617284
+    class counts:    31    24
+   probabilities: 0.564 0.436 
+  left son=104 (32 obs) right son=105 (23 obs)
+  Primary splits:
+      Fare            < 14.8729  to the left,  improve=3.6822630, (0 missing)
+      categolizedName splits as  --------L---R----, improve=1.2412120, (0 missing)
+      Parch           < 1.5      to the left,  improve=1.1415020, (0 missing)
+      Age             < 23.5     to the left,  improve=1.1399520, (13 missing)
+      PassengerId     < 399      to the right, improve=0.8025561, (0 missing)
+  Surrogate splits:
+      categolizedName splits as  --------L---R----, agree=0.727, adj=0.348, (0 split)
+      SibSp           splits as  LRRRL--, agree=0.709, adj=0.304, (0 split)
+      Parch           < 1.5      to the left,  agree=0.673, adj=0.217, (0 split)
+      Embarked        splits as  -LRL, agree=0.655, adj=0.174, (0 split)
+      PassengerId     < 355.5    to the right, agree=0.600, adj=0.043, (0 split)
+
+Node number 53: 37 observations,    complexity param=0
+  predicted class=1  expected loss=0.2972973  P(node) =0.04152637
+    class counts:    11    26
+   probabilities: 0.297 0.703 
+
+Node number 90: 7 observations
+  predicted class=0  expected loss=0.2857143  P(node) =0.007856341
+    class counts:     5     2
+   probabilities: 0.714 0.286 
+
+Node number 91: 15 observations
+  predicted class=1  expected loss=0.3333333  P(node) =0.01683502
+    class counts:     5    10
+   probabilities: 0.333 0.667 
+
+Node number 104: 32 observations
+  predicted class=0  expected loss=0.28125  P(node) =0.0359147
+    class counts:    23     9
+   probabilities: 0.719 0.281 
+
+Node number 105: 23 observations
+  predicted class=1  expected loss=0.3478261  P(node) =0.02581369
+    class counts:     8    15
+   probabilities: 0.348 0.652 
+

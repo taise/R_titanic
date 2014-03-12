@@ -1,0 +1,249 @@
+Call:
+rpart(formula = Survived ~ ., data = data_train, cp = -1, maxdepth = 5)
+  n= 700 
+
+            CP nsplit rel error    xerror       xstd
+1  0.446494465      0 1.0000000 1.0000000 0.04755487
+2  0.025830258      1 0.5535055 0.5535055 0.04005979
+3  0.020295203      3 0.5018450 0.5535055 0.04005979
+4  0.014760148      5 0.4612546 0.5756458 0.04062968
+5  0.012915129      7 0.4317343 0.5756458 0.04062968
+6  0.007380074      9 0.4059041 0.5424354 0.03976518
+7  0.003690037     10 0.3985240 0.5276753 0.03936201
+8  0.000000000     11 0.3948339 0.5608856 0.04025258
+9 -1.000000000     19 0.3948339 0.5608856 0.04025258
+
+Variable importance
+         Sex         Fare Cabin_factor        SibSp        Parch       Pclass          Age     Embarked 
+          38           19           17            8            5            4            4            4 
+
+Node number 1: 700 observations,    complexity param=0.4464945
+  predicted class=0  expected loss=0.3871429  P(node) =1
+    class counts:   429   271
+   probabilities: 0.613 0.387 
+  left son=2 (449 obs) right son=3 (251 obs)
+  Primary splits:
+      Sex          splits as  RL,           improve=98.016540, (0 missing)
+      Cabin_factor splits as  RRRRRRRLRRL,  improve=31.992800, (0 missing)
+      Pclass       splits as  RRL,          improve=30.560800, (0 missing)
+      Fare         < 10.48125 to the left,  improve=27.103590, (0 missing)
+      SibSp        splits as  LRRLLLL,      improve= 8.734762, (0 missing)
+  Surrogate splits:
+      Parch        < 1.5      to the left,  agree=0.671, adj=0.084, (0 split)
+      Fare         < 77.6229  to the left,  agree=0.666, adj=0.068, (0 split)
+      Cabin_factor splits as  LRLRLLRLLLL,  agree=0.654, adj=0.036, (0 split)
+      SibSp        splits as  LLLRLLL,      agree=0.650, adj=0.024, (0 split)
+      Embarked     splits as  RLRL,         agree=0.647, adj=0.016, (0 split)
+
+Node number 2: 449 observations,    complexity param=0.01476015
+  predicted class=0  expected loss=0.1893096  P(node) =0.6414286
+    class counts:   364    85
+   probabilities: 0.811 0.189 
+  left son=4 (366 obs) right son=5 (83 obs)
+  Primary splits:
+      Cabin_factor splits as  RRRRRR-LLLL,  improve=9.885908, (0 missing)
+      Pclass       splits as  RLL,          improve=6.850561, (0 missing)
+      Fare         < 26.26875 to the left,  improve=6.786440, (0 missing)
+      Age          < 13       to the right, improve=5.756144, (97 missing)
+      SibSp        splits as  LRLLLLL,      improve=2.030223, (0 missing)
+  Surrogate splits:
+      Pclass splits as  RLL,          agree=0.924, adj=0.590, (0 split)
+      Fare   < 49.7521  to the left,  agree=0.869, adj=0.289, (0 split)
+
+Node number 3: 251 observations,    complexity param=0.02583026
+  predicted class=1  expected loss=0.2589641  P(node) =0.3585714
+    class counts:    65   186
+   probabilities: 0.259 0.741 
+  left son=6 (119 obs) right son=7 (132 obs)
+  Primary splits:
+      Cabin_factor splits as  RRRRRRL-RRL,  improve=23.614900, (0 missing)
+      Pclass       splits as  RRL,          improve=23.149420, (0 missing)
+      Fare         < 48.2     to the left,  improve= 8.385927, (0 missing)
+      SibSp        splits as  RRRLLLL,      improve= 7.284385, (0 missing)
+      Embarked     splits as  RRRL,         improve= 3.154854, (0 missing)
+  Surrogate splits:
+      Fare     < 25.73335 to the left,  agree=0.805, adj=0.588, (0 split)
+      Embarked splits as  RRLR,         agree=0.633, adj=0.227, (0 split)
+      SibSp    splits as  RRLLLLL,      agree=0.586, adj=0.126, (0 split)
+      Parch    < 3.5      to the right, agree=0.550, adj=0.050, (0 split)
+      Age      < 21.5     to the left,  agree=0.542, adj=0.034, (0 split)
+
+Node number 4: 366 observations,    complexity param=0.01291513
+  predicted class=0  expected loss=0.1393443  P(node) =0.5228571
+    class counts:   315    51
+   probabilities: 0.861 0.139 
+  left son=8 (346 obs) right son=9 (20 obs)
+  Primary splits:
+      Age          < 13       to the right, improve=3.0303910, (90 missing)
+      Fare         < 9.425    to the left,  improve=1.2205800, (0 missing)
+      Cabin_factor splits as  -------LRLL,  improve=0.6289905, (0 missing)
+      Pclass       splits as  RLL,          improve=0.5437181, (0 missing)
+      SibSp        splits as  RRRLRLL,      improve=0.3992448, (0 missing)
+  Surrogate splits:
+      SibSp splits as  LLLRRR-, agree=0.964, adj=0.474, (87 split)
+
+Node number 5: 83 observations,    complexity param=0.01476015
+  predicted class=0  expected loss=0.4096386  P(node) =0.1185714
+    class counts:    49    34
+   probabilities: 0.590 0.410 
+  left son=10 (51 obs) right son=11 (32 obs)
+  Primary splits:
+      Age          < 36.25    to the right, improve=4.5980860, (7 missing)
+      SibSp        splits as  LRRL---,      improve=1.7041020, (0 missing)
+      Fare         < 152.5063 to the right, improve=1.0881870, (0 missing)
+      Cabin_factor splits as  RRLRRR-----,  improve=1.0281760, (0 missing)
+      Embarked     splits as  -RLL,         improve=0.2523705, (0 missing)
+  Surrogate splits:
+      Pclass       splits as  LRR,          agree=0.645, adj=0.156, (7 split)
+      Fare         < 26.46875 to the right, agree=0.632, adj=0.125, (0 split)
+      Cabin_factor splits as  LRLLLR-----,  agree=0.632, adj=0.125, (0 split)
+      Parch        < 1.5      to the left,  agree=0.618, adj=0.094, (0 split)
+      SibSp        splits as  LLLR---,      agree=0.592, adj=0.031, (0 split)
+
+Node number 6: 119 observations,    complexity param=0.02583026
+  predicted class=1  expected loss=0.487395  P(node) =0.17
+    class counts:    58    61
+   probabilities: 0.487 0.513 
+  left son=12 (18 obs) right son=13 (101 obs)
+  Primary splits:
+      Fare     < 24.80835 to the right, improve=6.837322, (0 missing)
+      Embarked splits as  -RRL,         improve=6.289463, (0 missing)
+      SibSp    splits as  RRRLRLL,      improve=3.717231, (0 missing)
+      Age      < 38.5     to the right, improve=3.008266, (37 missing)
+      Parch    < 1.5      to the right, improve=2.244794, (0 missing)
+  Surrogate splits:
+      SibSp splits as  RRRLLLL,      agree=0.908, adj=0.389, (0 split)
+      Parch < 3        to the right, agree=0.882, adj=0.222, (0 split)
+
+Node number 7: 132 observations,    complexity param=0
+  predicted class=1  expected loss=0.0530303  P(node) =0.1885714
+    class counts:     7   125
+   probabilities: 0.053 0.947 
+
+Node number 8: 346 observations,    complexity param=0
+  predicted class=0  expected loss=0.1242775  P(node) =0.4942857
+    class counts:   303    43
+   probabilities: 0.876 0.124 
+
+Node number 9: 20 observations,    complexity param=0.01291513
+  predicted class=0  expected loss=0.4  P(node) =0.02857143
+    class counts:    12     8
+   probabilities: 0.600 0.400 
+  left son=18 (13 obs) right son=19 (7 obs)
+  Primary splits:
+      SibSp splits as  RR-LLL-,      improve=7.75384600, (0 missing)
+      Fare  < 29.0625  to the right, improve=2.32727300, (0 missing)
+      Age   < 7.5      to the left,  improve=0.50125310, (1 missing)
+      Parch < 1.5      to the right, improve=0.01666667, (0 missing)
+  Surrogate splits:
+      Fare         < 20.8     to the right, agree=0.9, adj=0.714, (0 split)
+      Pclass       splits as  -RL,          agree=0.8, adj=0.429, (0 split)
+      Cabin_factor splits as  ---------RL,  agree=0.8, adj=0.429, (0 split)
+      Embarked     splits as  -RLL,         agree=0.7, adj=0.143, (0 split)
+
+Node number 10: 51 observations,    complexity param=0
+  predicted class=0  expected loss=0.2745098  P(node) =0.07285714
+    class counts:    37    14
+   probabilities: 0.725 0.275 
+
+Node number 11: 32 observations,    complexity param=0.007380074
+  predicted class=1  expected loss=0.375  P(node) =0.04571429
+    class counts:    12    20
+   probabilities: 0.375 0.625 
+  left son=22 (8 obs) right son=23 (24 obs)
+  Primary splits:
+      Cabin_factor splits as  RRLRRR-----,  improve=1.3333330, (0 missing)
+      Age          < 18.5     to the right, improve=0.9657143, (0 missing)
+      Fare         < 39.5625  to the right, improve=0.9109312, (0 missing)
+      Embarked     splits as  -L-R,         improve=0.7777778, (0 missing)
+      SibSp        splits as  LRRL---,      improve=0.3506494, (0 missing)
+  Surrogate splits:
+      Parch < 1.5      to the right, agree=0.812, adj=0.250, (0 split)
+      Fare  < 99.9896  to the right, agree=0.812, adj=0.250, (0 split)
+      SibSp splits as  RRRL---,      agree=0.781, adj=0.125, (0 split)
+
+Node number 12: 18 observations
+  predicted class=0  expected loss=0.1111111  P(node) =0.02571429
+    class counts:    16     2
+   probabilities: 0.889 0.111 
+
+Node number 13: 101 observations,    complexity param=0.0202952
+  predicted class=1  expected loss=0.4158416  P(node) =0.1442857
+    class counts:    42    59
+   probabilities: 0.416 0.584 
+  left son=26 (60 obs) right son=27 (41 obs)
+  Primary splits:
+      Fare     < 8.0396   to the right, improve=3.00507900, (0 missing)
+      Embarked splits as  -RRL,         improve=2.99895100, (0 missing)
+      Age      < 27.5     to the right, improve=2.33625400, (33 missing)
+      SibSp    splits as  RLRLR--,      improve=0.60451820, (0 missing)
+      Parch    < 0.5      to the right, improve=0.01255546, (0 missing)
+  Surrogate splits:
+      Embarked splits as  -LRL,         agree=0.752, adj=0.390, (0 split)
+      SibSp    splits as  RLLLR--,      agree=0.733, adj=0.341, (0 split)
+      Parch    < 0.5      to the right, agree=0.644, adj=0.122, (0 split)
+
+Node number 18: 13 observations
+  predicted class=0  expected loss=0.07692308  P(node) =0.01857143
+    class counts:    12     1
+   probabilities: 0.923 0.077 
+
+Node number 19: 7 observations
+  predicted class=1  expected loss=0  P(node) =0.01
+    class counts:     0     7
+   probabilities: 0.000 1.000 
+
+Node number 22: 8 observations
+  predicted class=0  expected loss=0.375  P(node) =0.01142857
+    class counts:     5     3
+   probabilities: 0.625 0.375 
+
+Node number 23: 24 observations,    complexity param=0
+  predicted class=1  expected loss=0.2916667  P(node) =0.03428571
+    class counts:     7    17
+   probabilities: 0.292 0.708 
+
+Node number 26: 60 observations,    complexity param=0.0202952
+  predicted class=0  expected loss=0.4833333  P(node) =0.08571429
+    class counts:    31    29
+   probabilities: 0.517 0.483 
+  left son=52 (15 obs) right son=53 (45 obs)
+  Primary splits:
+      Fare     < 10.7979  to the left,  improve=4.9000000, (0 missing)
+      Age      < 6.5      to the right, improve=3.7819310, (14 missing)
+      Embarked splits as  -RRL,         improve=1.1901100, (0 missing)
+      Parch    < 0.5      to the left,  improve=0.8037707, (0 missing)
+      SibSp    splits as  LRRL---,      improve=0.5428624, (0 missing)
+
+Node number 27: 41 observations,    complexity param=0.003690037
+  predicted class=1  expected loss=0.2682927  P(node) =0.05857143
+    class counts:    11    30
+   probabilities: 0.268 0.732 
+  left son=54 (7 obs) right son=55 (34 obs)
+  Primary splits:
+      Age      < 24       to the right, improve=1.3168830, (19 missing)
+      Embarked splits as  -RRL,         improve=0.5975610, (0 missing)
+      Fare     < 7.8667   to the left,  improve=0.5697832, (0 missing)
+  Surrogate splits:
+      Fare < 7.8875   to the right, agree=0.727, adj=0.143, (19 split)
+
+Node number 52: 15 observations
+  predicted class=0  expected loss=0.1333333  P(node) =0.02142857
+    class counts:    13     2
+   probabilities: 0.867 0.133 
+
+Node number 53: 45 observations
+  predicted class=1  expected loss=0.4  P(node) =0.06428571
+    class counts:    18    27
+   probabilities: 0.400 0.600 
+
+Node number 54: 7 observations
+  predicted class=0  expected loss=0.4285714  P(node) =0.01
+    class counts:     4     3
+   probabilities: 0.571 0.429 
+
+Node number 55: 34 observations
+  predicted class=1  expected loss=0.2058824  P(node) =0.04857143
+    class counts:     7    27
+   probabilities: 0.206 0.794 
+
